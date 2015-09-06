@@ -1,0 +1,311 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 214
+  Width = 875
+  object DataSource1: TDataSource
+    DataSet = auto
+    Left = 48
+    Top = 144
+  end
+  object DataSource2: TDataSource
+    DataSet = postavchik
+    Left = 136
+    Top = 144
+  end
+  object DataSource3: TDataSource
+    DataSet = postavka
+    Left = 216
+    Top = 144
+  end
+  object DataSource4: TDataSource
+    DataSet = klient
+    Left = 296
+    Top = 144
+  end
+  object DataSource5: TDataSource
+    DataSet = zakazi
+    Left = 376
+    Top = 144
+  end
+  object DataSource6: TDataSource
+    DataSet = zakaz_auto
+    Left = 456
+    Top = 144
+  end
+  object DataSource7: TDataSource
+    DataSet = zakaz_zapchasti
+    Left = 544
+    Top = 144
+  end
+  object DataSource8: TDataSource
+    DataSet = zakaz_tuninga
+    Left = 648
+    Top = 144
+  end
+  object DataSource9: TDataSource
+    DataSet = tuning
+    Left = 728
+    Top = 144
+  end
+  object DataSource10: TDataSource
+    DataSet = zapchasti
+    Left = 808
+    Top = 144
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Password=root;Persist Security Info=True;User' +
+      ' ID=root;Data Source=auto'
+    LoginPrompt = False
+    Left = 48
+    Top = 16
+  end
+  object auto: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'auto'
+    Left = 48
+    Top = 80
+    object autokod_auto: TIntegerField
+      FieldName = 'kod_auto'
+    end
+    object autokod_postavki: TIntegerField
+      FieldName = 'kod_postavki'
+    end
+    object automarka: TWideStringField
+      FieldName = 'marka'
+      Size = 255
+    end
+    object automodel: TWideStringField
+      FieldName = 'model'
+      Size = 255
+    end
+    object autogod_vipyska: TIntegerField
+      FieldName = 'god_vipyska'
+    end
+    object autostrana: TWideStringField
+      FieldName = 'strana'
+      Size = 255
+    end
+    object autoobym_dvigatela: TIntegerField
+      FieldName = 'obym_dvigatela'
+    end
+    object autocvet: TWideStringField
+      FieldName = 'cvet'
+      Size = 255
+    end
+    object autocena: TIntegerField
+      FieldName = 'cena'
+    end
+    object autokolvo: TIntegerField
+      FieldName = 'kolvo'
+    end
+  end
+  object postavchik: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'postavchik'
+    Left = 136
+    Top = 80
+    object postavchikkod_postavchika: TIntegerField
+      FieldName = 'kod_postavchika'
+    end
+    object postavchikima_postavchika: TWideStringField
+      FieldName = 'ima_postavchika'
+      Size = 255
+    end
+    object postavchikstrana: TWideStringField
+      FieldName = 'strana'
+      Size = 255
+    end
+    object postavchikgorod: TWideStringField
+      FieldName = 'gorod'
+      Size = 255
+    end
+  end
+  object postavka: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'postavka'
+    Left = 216
+    Top = 80
+    object postavkakod_postavki: TIntegerField
+      FieldName = 'kod_postavki'
+    end
+    object postavkakod_postavchika: TIntegerField
+      FieldName = 'kod_postavchika'
+    end
+    object postavkaima_postavchika: TStringField
+      FieldKind = fkLookup
+      FieldName = 'ima_postavchika'
+      LookupDataSet = postavchik
+      LookupKeyFields = 'kod_postavchika'
+      LookupResultField = 'ima_postavchika'
+      KeyFields = 'kod_postavchika'
+      Size = 255
+      Lookup = True
+    end
+    object postavkapostavlenii_prodykt: TWideStringField
+      FieldName = 'postavlenii_prodykt'
+      Size = 255
+    end
+    object postavkakolichestvo: TIntegerField
+      FieldName = 'kolichestvo'
+    end
+    object postavkadata_postavki: TWideStringField
+      FieldName = 'data_postavki'
+      Size = 255
+    end
+    object postavkastoimosti: TIntegerField
+      FieldName = 'stoimosti'
+    end
+  end
+  object klient: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'klient'
+    Left = 296
+    Top = 80
+    object klientkod_klienta: TIntegerField
+      FieldName = 'kod_klienta'
+    end
+    object klientfamilya: TWideStringField
+      FieldName = 'familya'
+      Size = 255
+    end
+    object klientima: TWideStringField
+      FieldName = 'ima'
+      Size = 255
+    end
+    object klientotchestvo: TWideStringField
+      FieldName = 'otchestvo'
+      Size = 255
+    end
+    object klientstrana: TWideStringField
+      FieldName = 'strana'
+      Size = 255
+    end
+    object klientgorod: TWideStringField
+      FieldName = 'gorod'
+      Size = 255
+    end
+    object klientadres: TWideStringField
+      FieldName = 'adres'
+      Size = 255
+    end
+    object klienttelefon: TIntegerField
+      FieldName = 'telefon'
+    end
+  end
+  object zakazi: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'zakazi'
+    Left = 376
+    Top = 80
+    object zakazikod_zakaza: TIntegerField
+      FieldName = 'kod_zakaza'
+    end
+    object zakazikod_klienta: TIntegerField
+      FieldName = 'kod_klienta'
+    end
+    object zakazidata: TWideStringField
+      FieldName = 'data'
+      Size = 255
+    end
+    object zakazisposob_oplati: TWideStringField
+      FieldName = 'sposob_oplati'
+      Size = 255
+    end
+  end
+  object zakaz_auto: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'zakaz_auto'
+    Left = 456
+    Top = 80
+    object zakaz_autokod_zakaza: TIntegerField
+      FieldName = 'kod_zakaza'
+    end
+    object zakaz_autokod_auto: TIntegerField
+      FieldName = 'kod_auto'
+    end
+  end
+  object zakaz_zapchasti: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'zakaz_zapchasti'
+    Left = 544
+    Top = 80
+    object zakaz_zapchastikod_zakaza: TIntegerField
+      FieldName = 'kod_zakaza'
+    end
+    object zakaz_zapchastikod_zapchasti: TIntegerField
+      FieldName = 'kod_zapchasti'
+    end
+  end
+  object zakaz_tuninga: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'zakaz_tuninga'
+    Left = 648
+    Top = 80
+    object zakaz_tuningakod_zakaza: TIntegerField
+      FieldName = 'kod_zakaza'
+    end
+    object zakaz_tuningakod_tuninga: TIntegerField
+      FieldName = 'kod_tuninga'
+    end
+  end
+  object tuning: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'tuning'
+    Left = 728
+    Top = 80
+    object tuningkod_tuninga: TIntegerField
+      FieldName = 'kod_tuninga'
+    end
+    object tuningyslygi: TWideStringField
+      FieldName = 'yslygi'
+      Size = 255
+    end
+    object tuningstoimosti: TIntegerField
+      FieldName = 'stoimosti'
+    end
+  end
+  object zapchasti: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'zapchasti'
+    Left = 808
+    Top = 80
+    object zapchastikod_zapchasti: TIntegerField
+      FieldName = 'kod_zapchasti'
+    end
+    object zapchastikod_postavki: TIntegerField
+      FieldName = 'kod_postavki'
+    end
+    object zapchastinaimenovanie_zapchasti: TWideStringField
+      FieldName = 'naimenovanie_zapchasti'
+      Size = 255
+    end
+    object zapchasticena: TIntegerField
+      FieldName = 'cena'
+    end
+    object zapchastikolichestvo_na_sklade: TIntegerField
+      FieldName = 'kolichestvo_na_sklade'
+    end
+  end
+end
