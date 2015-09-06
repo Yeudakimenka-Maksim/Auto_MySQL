@@ -4,3 +4,4 @@
 *.vlb
 Win32/
 __history/
+*.tvsconfig
