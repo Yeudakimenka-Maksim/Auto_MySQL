@@ -430,4 +430,46 @@ object DM: TDM
       Lookup = True
     end
   end
+  object DataSource11: TDataSource
+    DataSet = sklad
+    Left = 216
+    Top = 16
+  end
+  object sklad: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'sklad'
+    Left = 136
+    Top = 16
+    object skladkod: TAutoIncField
+      FieldName = 'kod'
+      ReadOnly = True
+    end
+    object skladtip_produkta: TWideStringField
+      FieldName = 'tip_produkta'
+      Size = 255
+    end
+    object skladkod_produkta: TIntegerField
+      FieldName = 'kod_produkta'
+    end
+    object skladnaimenovanie: TWideStringField
+      FieldName = 'naimenovanie'
+      Size = 255
+    end
+    object skladpostavchik: TWideStringField
+      FieldName = 'postavchik'
+      Size = 255
+    end
+    object skladdata_postavki: TWideStringField
+      FieldName = 'data_postavki'
+      Size = 255
+    end
+    object skladcena: TIntegerField
+      FieldName = 'cena'
+    end
+    object skladkolichestvo: TIntegerField
+      FieldName = 'kolichestvo'
+    end
+  end
 end
