@@ -195,3 +195,56 @@ begin
 end
  ^
 delimiter ;
+
+drop trigger if exists dobavit_zapchast_na_sklad;
+delimiter ^
+create trigger dobavit_zapchast_na_sklad after insert on zapchasti 
+for each row
+begin
+  declare k int;
+  declare p varchar(255);
+  declare d varchar(255);
+
+  select data_postavki
+  from postavka
+  where kod_postavki = new.kod_postavki
+  into d;
+  
+  select kod_postavchika
+  from postavka
+  where kod_postavki = new.kod_postavki
+  into k;
+  
+  select ima_postavchika
+  from postavchik
+  where kod_postavchika = k
+  into p;
+  
+  insert into sklad (tip_produkta, kod_produkta, naimenovanie, postavchik, data_postavki, cena, kolichestvo)
+  values ('zapchast', new.kod_zapchasti, new.naimenovanie_zapchasti, p, d, new.cena, new.kolichestvo_na_sklade);
+end
+ ^
+delimiter ;
+
+drop trigger if exists izmenit_zapchast_na_sklade;
+delimiter ^
+create trigger izmenit_zapchast_na_sklade after update on zapchasti 
+for each row
+begin
+  update sklad 
+  set kolichestvo = new.kolichestvo_na_sklade
+  where tip_produkta = 'zapchast' and naimenovanie = old.naimenovanie_zapchasti;
+end
+ ^
+delimiter ;
+
+drop trigger if exists udalit_zapchast_so_sklada;
+delimiter ^
+create trigger udalit_zapchast_so_sklada after delete on zapchasti 
+for each row
+begin
+  delete from sklad 
+  where tip_produkta = 'zapchast' and naimenovanie = old.naimenovanie_zapchasti;
+end
+ ^
+delimiter ;
