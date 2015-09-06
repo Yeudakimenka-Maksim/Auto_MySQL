@@ -66,8 +66,8 @@ begin
           exit;
         end;
         DM.auto.Insert;
-        DM.auto.Fields[0].AsInteger := StrToInt(Edit1.Text);
         DM.auto.Fields[1].AsInteger := StrToInt(ComboBox1.Text);
+        DM.auto.Fields[0].AsInteger := StrToInt(Edit1.Text);
         DM.auto.Fields[3].AsString := Edit8.Text;
         DM.auto.Fields[4].AsString := Edit9.Text;
         DM.auto.Fields[5].AsInteger := StrToInt(Edit2.Text);
@@ -155,11 +155,11 @@ begin
         Edit1.Visible := true;
         ComboBox1.Visible := true;
         Edit10.Visible := false;
-        for i := 1 to Panel1.ComponentCount do
-          if Panel1.Components[i - 1].ClassType = TEdit then
+        for i := 1 to Panel1.ControlCount do
+          if Panel1.Controls[i - 1].ClassType = TEdit then
           begin
-            (Components[i - 1] as TEdit).ReadOnly := false;
-            (Components[i - 1] as TEdit).Clear;
+            (Panel1.Controls[i - 1] as TEdit).ReadOnly := false;
+            (Panel1.Controls[i - 1] as TEdit).Clear;
           end;
         DM.auto.Last;
         Edit1.Text := IntToStr(DM.autoKOD_AUTO.Value + 1);
@@ -180,9 +180,9 @@ begin
         Edit1.Visible := false;
         ComboBox1.Visible := true;
         Edit10.Visible := false;
-        for i := 1 to Panel1.ComponentCount do
-          if Panel1.Components[i - 1].ClassType = TEdit then
-            (Components[i - 1] as TEdit).ReadOnly := false;
+        for i := 1 to Panel1.ControlCount do
+          if Panel1.Controls[i - 1].ClassType = TEdit then
+            (Panel1.Controls[i - 1] as TEdit).ReadOnly := false;
         i := DM.autoKOD_AUTO.Value;
         ComboBox4.Clear;
         DM.auto.First;
@@ -208,9 +208,9 @@ begin
         Edit1.Visible := false;
         ComboBox1.Visible := false;
         Edit10.Visible := true;
-        for i := 1 to Panel1.ComponentCount do
-          if Panel1.Components[i - 1].ClassType = TEdit then
-            (Components[i - 1] as TEdit).ReadOnly := true;
+        for i := 1 to Panel1.ControlCount do
+          if Panel1.Controls[i - 1].ClassType = TEdit then
+            (Panel1.Controls[i - 1] as TEdit).ReadOnly := true;
         i := DM.autoKOD_AUTO.Value;
         ComboBox4.Clear;
         DM.auto.First;

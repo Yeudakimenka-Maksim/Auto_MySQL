@@ -79,7 +79,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit2, Unit5, Unit6, Unit7;
+uses Unit2, Unit5, Unit6, Unit7, Unit8;
 
 procedure TForm3.N10Click(Sender: TObject);
 begin
@@ -145,7 +145,7 @@ end;
 
 procedure TForm3.N19Click(Sender: TObject);
 begin
-  Form5.Show;
+  Form8.Show;
   Form3.Hide
 end;
 
