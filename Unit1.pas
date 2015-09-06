@@ -76,6 +76,7 @@ type
     zapchasticena: TIntegerField;
     zapchastikolichestvo_na_sklade: TIntegerField;
     postavkaima_postavchika: TStringField;
+    autopostavchik: TStringField;
     procedure АвтомобильGOD_VIPYSKASetText(Sender: TField; const Text: string);
     procedure АвтомобильOBYM_DVIGATELASetText(Sender: TField;
       const Text: string);

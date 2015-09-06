@@ -74,6 +74,15 @@ object DM: TDM
     object autokod_postavki: TIntegerField
       FieldName = 'kod_postavki'
     end
+    object autopostavchik: TStringField
+      FieldKind = fkLookup
+      FieldName = 'postavchik'
+      LookupDataSet = postavka
+      LookupKeyFields = 'kod_postavki'
+      LookupResultField = 'ima_postavchika'
+      KeyFields = 'kod_postavki'
+      Lookup = True
+    end
     object automarka: TWideStringField
       FieldName = 'marka'
       Size = 255
