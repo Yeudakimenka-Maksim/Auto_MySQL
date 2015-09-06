@@ -90,6 +90,16 @@ type
     zakaz_autodata: TStringField;
     zakaz_zapchastidata: TStringField;
     zapchastiima_postavchika: TStringField;
+    DataSource11: TDataSource;
+    sklad: TADOTable;
+    skladkod: TAutoIncField;
+    skladtip_produkta: TWideStringField;
+    skladkod_produkta: TIntegerField;
+    skladnaimenovanie: TWideStringField;
+    skladpostavchik: TWideStringField;
+    skladdata_postavki: TWideStringField;
+    skladcena: TIntegerField;
+    skladkolichestvo: TIntegerField;
     procedure АвтомобильGOD_VIPYSKASetText(Sender: TField; const Text: string);
     procedure АвтомобильOBYM_DVIGATELASetText(Sender: TField;
       const Text: string);

@@ -47,6 +47,8 @@ type
     N1: TMenuItem;
     N2: TMenuItem;
     N3: TMenuItem;
+    TabSheet11: TTabSheet;
+    DBGrid11: TDBGrid;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure DBGrid2TitleClick(Column: TColumn);
     procedure DBGrid1TitleClick(Column: TColumn);

@@ -765,6 +765,70 @@ object Form2: TForm2
           end>
       end
     end
+    object TabSheet11: TTabSheet
+      Caption = #1057#1082#1083#1072#1076
+      ImageIndex = 10
+      object DBGrid11: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 938
+        Height = 509
+        Align = alClient
+        DataSource = DM.DataSource11
+        ReadOnly = True
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -13
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'kod'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'tip_produkta'
+            Width = 85
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'kod_produkta'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'naimenovanie'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'postavchik'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'data_postavki'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cena'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'kolichestvo'
+            Visible = True
+          end>
+      end
+    end
   end
   object PopupMenu1: TPopupMenu
     Left = 672
