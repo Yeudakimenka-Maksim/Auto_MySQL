@@ -79,7 +79,6 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'kod_postavki'
             Title.Caption = #1050#1086#1076'_'#1055#1086#1089#1090#1072#1074#1082#1080
-            Width = -1
             Visible = False
           end
           item
@@ -475,7 +474,15 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'kod_klienta'
             Title.Caption = #1050#1086#1076'_'#1050#1083#1080#1077#1085#1090#1072
-            Width = 90
+            Width = -1
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'klientfio'
+            ReadOnly = True
+            Title.Caption = #1050#1083#1080#1077#1085#1090
+            Width = 200
             Visible = True
           end
           item
@@ -489,8 +496,23 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'sposob_oplati'
             Title.Caption = #1057#1087#1086#1089#1086#1073' '#1086#1087#1083#1072#1090#1099
-            Width = 90
+            Width = 120
             Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'klientfamilya'
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'klientima'
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'klientotchestvo'
+            Visible = False
           end>
       end
     end

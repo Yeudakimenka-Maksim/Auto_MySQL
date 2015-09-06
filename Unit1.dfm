@@ -215,6 +215,7 @@ object DM: TDM
     Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
+    OnCalcFields = zakaziCalcFields
     TableName = 'zakazi'
     Left = 376
     Top = 80
@@ -231,6 +232,38 @@ object DM: TDM
     object zakazisposob_oplati: TWideStringField
       FieldName = 'sposob_oplati'
       Size = 255
+    end
+    object zakaziklientfamilya: TStringField
+      FieldKind = fkLookup
+      FieldName = 'klientfamilya'
+      LookupDataSet = klient
+      LookupKeyFields = 'kod_klienta'
+      LookupResultField = 'familya'
+      KeyFields = 'kod_klienta'
+      Lookup = True
+    end
+    object zakaziklientima: TStringField
+      FieldKind = fkLookup
+      FieldName = 'klientima'
+      LookupDataSet = klient
+      LookupKeyFields = 'kod_klienta'
+      LookupResultField = 'ima'
+      KeyFields = 'kod_klienta'
+      Lookup = True
+    end
+    object zakaziklientotchestvo: TStringField
+      FieldKind = fkLookup
+      FieldName = 'klientotchestvo'
+      LookupDataSet = klient
+      LookupKeyFields = 'kod_klienta'
+      LookupResultField = 'otchestvo'
+      KeyFields = 'kod_klienta'
+      Lookup = True
+    end
+    object zakaziklientfio: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'klientfio'
+      Calculated = True
     end
   end
   object zakaz_auto: TADOTable

@@ -77,6 +77,10 @@ type
     zapchastikolichestvo_na_sklade: TIntegerField;
     postavkaima_postavchika: TStringField;
     autopostavchik: TStringField;
+    zakaziklientfamilya: TStringField;
+    zakaziklientima: TStringField;
+    zakaziklientotchestvo: TStringField;
+    zakaziklientfio: TStringField;
     procedure ÀâòîìîáèëüGOD_VIPYSKASetText(Sender: TField; const Text: string);
     procedure ÀâòîìîáèëüOBYM_DVIGATELASetText(Sender: TField;
       const Text: string);
@@ -84,6 +88,7 @@ type
     procedure ÏîñòàâêàSTOIMOSTISetText(Sender: TField; const Text: string);
     procedure ÇàêàçûIntervalGetText(Sender: TField; var Text: string;
       DisplayText: Boolean);
+    procedure zakaziCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -98,6 +103,12 @@ implementation
 { %CLASSGROUP 'System.Classes.TPersistent' }
 
 {$R *.dfm}
+
+procedure TDM.zakaziCalcFields(DataSet: TDataSet);
+begin
+  DM.zakaziklientfio.Value := DM.zakaziklientfamilya.Value + ' ' +
+    DM.zakaziklientima.Value + ' ' + DM.zakaziklientotchestvo.Value;
+end;
 
 procedure TDM.ÀâòîìîáèëüGOD_VIPYSKASetText(Sender: TField; const Text: string);
 begin
