@@ -733,7 +733,13 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'kod_postavki'
             Title.Caption = #1050#1086#1076' '#1055#1086#1089#1090#1072#1074#1082#1080
-            Width = 90
+            Width = -1
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'ima_postavchika'
+            Title.Caption = #1055#1086#1089#1090#1072#1074#1097#1080#1082
             Visible = True
           end
           item

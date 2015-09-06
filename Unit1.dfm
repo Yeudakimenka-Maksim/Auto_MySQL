@@ -420,5 +420,14 @@ object DM: TDM
     object zapchastikolichestvo_na_sklade: TIntegerField
       FieldName = 'kolichestvo_na_sklade'
     end
+    object zapchastiima_postavchika: TStringField
+      FieldKind = fkLookup
+      FieldName = 'ima_postavchika'
+      LookupDataSet = postavka
+      LookupKeyFields = 'kod_postavki'
+      LookupResultField = 'ima_postavchika'
+      KeyFields = 'kod_postavki'
+      Lookup = True
+    end
   end
 end
