@@ -85,6 +85,10 @@ type
     zakaz_autoautomodel: TStringField;
     zakaz_autoautomarkamodel: TStringField;
     zakaz_zapchastinaimenovanie_zapchasti: TStringField;
+    zakaz_tuningayslygi: TStringField;
+    zakaz_tuningadata: TStringField;
+    zakaz_autodata: TStringField;
+    zakaz_zapchastidata: TStringField;
     procedure АвтомобильGOD_VIPYSKASetText(Sender: TField; const Text: string);
     procedure АвтомобильOBYM_DVIGATELASetText(Sender: TField;
       const Text: string);

@@ -263,7 +263,7 @@ object DM: TDM
     object zakaziklientfio: TStringField
       FieldKind = fkCalculated
       FieldName = 'klientfio'
-	  Size = 50
+      Size = 50
       Calculated = True
     end
   end
@@ -305,6 +305,15 @@ object DM: TDM
       KeyFields = 'kod_auto'
       Lookup = True
     end
+    object zakaz_autodata: TStringField
+      FieldKind = fkLookup
+      FieldName = 'data'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'data'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
+    end
   end
   object zakaz_zapchasti: TADOTable
     Active = True
@@ -328,6 +337,15 @@ object DM: TDM
       KeyFields = 'kod_zapchasti'
       Lookup = True
     end
+    object zakaz_zapchastidata: TStringField
+      FieldKind = fkLookup
+      FieldName = 'data'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'data'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
+    end
   end
   object zakaz_tuninga: TADOTable
     Active = True
@@ -341,6 +359,24 @@ object DM: TDM
     end
     object zakaz_tuningakod_tuninga: TIntegerField
       FieldName = 'kod_tuninga'
+    end
+    object zakaz_tuningayslygi: TStringField
+      FieldKind = fkLookup
+      FieldName = 'yslygi'
+      LookupDataSet = tuning
+      LookupKeyFields = 'kod_tuninga'
+      LookupResultField = 'yslygi'
+      KeyFields = 'kod_tuninga'
+      Lookup = True
+    end
+    object zakaz_tuningadata: TStringField
+      FieldKind = fkLookup
+      FieldName = 'data'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'data'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
     end
   end
   object tuning: TADOTable
