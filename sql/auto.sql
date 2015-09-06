@@ -108,41 +108,30 @@ primary key (kod_zakaza, kod_zapchasti)
 alter table zakaz_zapchasti add constraint fk_zakaz_zapchasti_1 foreign key (kod_zapchasti) references zapchasti (kod_zapchasti);
 alter table zakaz_zapchasti add constraint fk_zakaz_zapchasti_2 foreign key (kod_zakaza) references zakazi (kod_zakaza);
 
+create table sklad
+(
+  kod int not null auto_increment,
+  tip_produkta varchar(255),
+  kod_produkta int not null,
+  naimenovanie varchar(255),
+  postavchik varchar(255),
+  data_postavki varchar(255),
+  cena int,
+  kolichestvo int,
+primary key (kod)
+);
+
+-- insert into sklad (tip_produkta, kod_produkta, naimenovanie, cena, kolichestvo)
+-- select 'auto', kod_auto, CONCAT(marka, ' ', model), cena, kolvo
+-- from auto;
+
+-- insert into sklad (tip_produkta, kod_produkta, naimenovanie, cena, kolichestvo)
+-- select 'zapchast', kod_zapchasti, naimenovanie_zapchasti, cena, kolichestvo_na_sklade
+-- from zapchasti;
+
 /* ------------------------------------------------------------------------------------------------------------------ */
 
-create user user1@localhost identified by '1';
-create user user2@localhost identified by '2';
-create user user3@localhost identified by '3';
-create user user4@localhost identified by '4';
-
-grant all privileges on *.* to user1@localhost identified by '1';
-grant select, insert, update, delete, index, alter, create, drop, file on *.* to user2@localhost identified by '2';
-grant select, insert on auto.* to user3@localhost identified by '3';
-grant select, delete, insert (naimenovanie_zapchasti, cena, kolichestvo_na_sklade) on zapchasti to user4@localhost identified by '4';
-grant select, delete, insert (marka, model, god_vipyska, strana, obym_dvigatela, cvet, cena) on auto to user4@localhost identified by '4';
-
-/* ------------------------------------------------------------------------------------------------------------------ */
-
-explain select distinct klient.* 
-from klient inner join zakazi on klient.kod_klienta = zakazi.kod_klienta; 
-
-explain select distinct klient.* 
-from klient 
-where klient.kod_klienta in (select zakazi.kod_klienta from zakazi); 
-
-/* ------------------------------------------------------------------------------------------------------------------ */
-
-delimiter ^
-create trigger auto_decr after delete on zakaz_auto 
-for each row
-begin
-  select kolvo from auto where kod_auto = old.kod_auto into @a;
-  set @a = @a - 1;
-  update auto set kolvo = @a where kod_auto = old.kod_auto;
-end
- ^
-delimiter ;
-
+drop trigger if exists sposob_oplati;
 delimiter ^
 create trigger sposob_oplati before insert on zakazi 
 for each row
@@ -154,24 +143,55 @@ end
  ^
 delimiter ;
 
-
+drop trigger if exists dobavit_auto_na_sklad;
 delimiter ^
-create procedure klient()
+create trigger dobavit_auto_na_sklad after insert on auto 
+for each row
 begin
-  select distinct klient.*
-  from klient inner join zakazi on klient.kod_klienta = zakazi.kod_klienta;
+  declare k int;
+  declare p varchar(255);
+  declare d varchar(255);
+
+  select data_postavki
+  from postavka
+  where kod_postavki = new.kod_postavki
+  into d;
+  
+  select kod_postavchika
+  from postavka
+  where kod_postavki = new.kod_postavki
+  into k;
+  
+  select ima_postavchika
+  from postavchik
+  where kod_postavchika = k
+  into p;
+  
+  insert into sklad (tip_produkta, kod_produkta, naimenovanie, postavchik, data_postavki, cena, kolichestvo)
+  values ('auto', new.kod_auto, CONCAT(new.marka, ' ', new.model), p, d, new.cena, new.kolvo);
 end
  ^
 delimiter ;
-call klient;
 
+drop trigger if exists izmenit_auto_na_sklade;
 delimiter ^
-create procedure postavchik(in ima varchar(255))
+create trigger izmenit_auto_na_sklade after update on auto 
+for each row
 begin
-  select auto.*
-  from postavchik inner join (postavka inner join auto on postavka.kod_postavki = auto.kod_postavki) on postavchik.kod_postavchika = postavka.kod_postavchika
-  where ima_postavchika like ima;
+  update sklad 
+  set kolichestvo = new.kolvo
+  where tip_produkta = 'auto' and naimenovanie = CONCAT(old.marka, ' ', old.model);
 end
  ^
 delimiter ;
-call postavchik("bmw");
+
+drop trigger if exists udalit_auto_so_sklada;
+delimiter ^
+create trigger udalit_auto_so_sklada after delete on auto 
+for each row
+begin
+  delete from sklad 
+  where tip_produkta = 'auto' and naimenovanie = CONCAT(old.marka, ' ', old.model);
+end
+ ^
+delimiter ;
