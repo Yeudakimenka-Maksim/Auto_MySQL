@@ -81,6 +81,9 @@ type
     zakaziklientima: TStringField;
     zakaziklientotchestvo: TStringField;
     zakaziklientfio: TStringField;
+    zakaz_autoautomarka: TStringField;
+    zakaz_autoautomodel: TStringField;
+    zakaz_autoautomarkamodel: TStringField;
     procedure АвтомобильGOD_VIPYSKASetText(Sender: TField; const Text: string);
     procedure АвтомобильOBYM_DVIGATELASetText(Sender: TField;
       const Text: string);
@@ -89,6 +92,7 @@ type
     procedure ЗаказыIntervalGetText(Sender: TField; var Text: string;
       DisplayText: Boolean);
     procedure zakaziCalcFields(DataSet: TDataSet);
+    procedure zakaz_autoCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -108,6 +112,12 @@ procedure TDM.zakaziCalcFields(DataSet: TDataSet);
 begin
   DM.zakaziklientfio.Value := DM.zakaziklientfamilya.Value + ' ' +
     DM.zakaziklientima.Value + ' ' + DM.zakaziklientotchestvo.Value;
+end;
+
+procedure TDM.zakaz_autoCalcFields(DataSet: TDataSet);
+begin
+  DM.zakaz_autoautomarkamodel.Value := DM.zakaz_autoautomarka.Value + ' ' +
+    DM.zakaz_autoautomodel.Value;
 end;
 
 procedure TDM.АвтомобильGOD_VIPYSKASetText(Sender: TField; const Text: string);

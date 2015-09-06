@@ -545,8 +545,24 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'kod_auto'
             Title.Caption = #1050#1086#1076'_'#1040#1074#1090#1086
-            Width = 90
+            Width = -1
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'automarkamodel'
+            Title.Caption = #1040#1074#1090#1086
             Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'automarka'
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'automodel'
+            Visible = False
           end>
       end
     end

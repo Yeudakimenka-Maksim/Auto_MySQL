@@ -263,6 +263,7 @@ object DM: TDM
     object zakaziklientfio: TStringField
       FieldKind = fkCalculated
       FieldName = 'klientfio'
+	  Size = 50
       Calculated = True
     end
   end
@@ -270,6 +271,7 @@ object DM: TDM
     Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
+    OnCalcFields = zakaz_autoCalcFields
     TableName = 'zakaz_auto'
     Left = 456
     Top = 80
@@ -278,6 +280,30 @@ object DM: TDM
     end
     object zakaz_autokod_auto: TIntegerField
       FieldName = 'kod_auto'
+    end
+    object zakaz_autoautomarkamodel: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'automarkamodel'
+      Size = 50
+      Calculated = True
+    end
+    object zakaz_autoautomarka: TStringField
+      FieldKind = fkLookup
+      FieldName = 'automarka'
+      LookupDataSet = auto
+      LookupKeyFields = 'kod_auto'
+      LookupResultField = 'marka'
+      KeyFields = 'kod_auto'
+      Lookup = True
+    end
+    object zakaz_autoautomodel: TStringField
+      FieldKind = fkLookup
+      FieldName = 'automodel'
+      LookupDataSet = auto
+      LookupKeyFields = 'kod_auto'
+      LookupResultField = 'model'
+      KeyFields = 'kod_auto'
+      Lookup = True
     end
   end
   object zakaz_zapchasti: TADOTable
