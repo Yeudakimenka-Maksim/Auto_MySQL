@@ -72,6 +72,7 @@ object Form2: TForm2
           item
             Expanded = False
             FieldName = 'postavchik'
+            Title.Caption = #1055#1086#1089#1090#1072#1074#1097#1080#1082
             Width = 100
             Visible = True
           end
@@ -474,7 +475,6 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'kod_klienta'
             Title.Caption = #1050#1086#1076'_'#1050#1083#1080#1077#1085#1090#1072
-            Width = -1
             Visible = False
           end
           item
@@ -545,7 +545,6 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'kod_auto'
             Title.Caption = #1050#1086#1076'_'#1040#1074#1090#1086
-            Width = -1
             Visible = False
           end
           item
@@ -595,7 +594,13 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'kod_zapchasti'
             Title.Caption = #1050#1086#1076'_'#1079#1072#1087#1095#1072#1089#1090#1080
-            Width = 90
+            Width = -1
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'naimenovanie_zapchasti'
+            Title.Caption = #1047#1072#1087#1095#1072#1089#1090#1100
             Visible = True
           end>
       end

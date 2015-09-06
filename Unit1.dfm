@@ -319,6 +319,15 @@ object DM: TDM
     object zakaz_zapchastikod_zapchasti: TIntegerField
       FieldName = 'kod_zapchasti'
     end
+    object zakaz_zapchastinaimenovanie_zapchasti: TStringField
+      FieldKind = fkLookup
+      FieldName = 'naimenovanie_zapchasti'
+      LookupDataSet = zapchasti
+      LookupKeyFields = 'kod_zapchasti'
+      LookupResultField = 'naimenovanie_zapchasti'
+      KeyFields = 'kod_zapchasti'
+      Lookup = True
+    end
   end
   object zakaz_tuninga: TADOTable
     Active = True
