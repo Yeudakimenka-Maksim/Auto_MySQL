@@ -4894,7 +4894,7 @@ object Form3: TForm3
     object N2: TMenuItem
       Caption = #1047#1072#1087#1088#1086#1089#1099
       object N19: TMenuItem
-        Caption = #1053#1086#1074#1099#1081' '#1079#1072#1087#1088#1086#1089
+        Caption = #1055#1086#1080#1089#1082' '#1074' '#1090#1072#1073#1083#1080#1094#1072#1093
         OnClick = N19Click
       end
     end

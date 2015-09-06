@@ -210,6 +210,29 @@ procedure TForm2.PageControl1Change(Sender: TObject);
 begin
   if PageControl1.ActivePageIndex = 0 then
     UpdateComboBoxes;
+
+  DM.auto.Close;
+  DM.auto.Open;
+  DM.postavchik.Close;
+  DM.postavchik.Open;
+  DM.postavka.Close;
+  DM.postavka.Open;
+  DM.klient.Close;
+  DM.klient.Open;
+  DM.zakazi.Close;
+  DM.zakazi.Open;
+  DM.zakaz_auto.Close;
+  DM.zakaz_auto.Open;
+  DM.zakaz_zapchasti.Close;
+  DM.zakaz_zapchasti.Open;
+  DM.zakaz_tuninga.Close;
+  DM.zakaz_tuninga.Open;
+  DM.tuning.Close;
+  DM.tuning.Open;
+  DM.zapchasti.Close;
+  DM.zapchasti.Open;
+  DM.sklad.Close;
+  DM.sklad.Open;
 end;
 
 procedure TForm2.UpdateComboBoxes;
