@@ -37,6 +37,7 @@ type
     procedure RadioGroup1Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -50,7 +51,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit1, Unit4;
+uses Unit1, Unit4, Unit2;
 
 procedure TForm8.Button1Click(Sender: TObject);
 begin
@@ -183,36 +184,15 @@ begin
   ComboBox1.Items := ADOTable1.FieldDefList;
 end;
 
+procedure TForm8.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Form2.Show;
+  Form8.Hide;
+end;
+
 procedure TForm8.FormShow(Sender: TObject);
-var
-  i: Integer;
 begin
   ComboBox2Change(Self);
-
-  // for i := 1 to Form8.ComponentCount do
-  // if Form8.Components[i - 1].ClassType = TEdit then
-  // (Components[i - 1] as TEdit).Clear;
-  // RadioGroup1.Buttons[1].Enabled := false;
-  // case Form4.PageControl1.ActivePageIndex of
-  // 0:
-  // ADOTable1.TableName := 'poezd';
-  // 1:
-  // ADOTable1.TableName := 'reys';
-  // 2:
-  // ADOTable1.TableName := 'rabotnik_vokzala';
-  // 3:
-  // ADOTable1.TableName := 'ostanovka';
-  // 4:
-  // ADOTable1.TableName := 'nabor_ostanovok';
-  // 5:
-  // ADOTable1.TableName := 'postradavshiy';
-  // 6:
-  // ADOTable1.TableName := 'brigada';
-  // 7:
-  // ADOTable1.TableName := 'chlen_brigady';
-  // end;
-  // ADOTable1.Open;
-  // ComboBox1.Items := ADOTable1.FieldDefList;
 end;
 
 procedure TForm8.RadioGroup1Click(Sender: TObject);
