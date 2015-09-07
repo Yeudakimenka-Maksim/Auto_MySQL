@@ -321,6 +321,43 @@ object DM: TDM
       KeyFields = 'kod_zakaza'
       Lookup = True
     end
+    object zakaz_autocena: TIntegerField
+      FieldKind = fkLookup
+      FieldName = 'cena'
+      LookupDataSet = auto
+      LookupKeyFields = 'kod_auto'
+      LookupResultField = 'cena'
+      KeyFields = 'kod_auto'
+      Lookup = True
+    end
+    object zakaz_autokod_klienta: TIntegerField
+      FieldKind = fkLookup
+      FieldName = 'kod_klienta'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'kod_klienta'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
+    end
+    object zakaz_autofio: TStringField
+      FieldKind = fkLookup
+      FieldName = 'fio'
+      LookupDataSet = klient
+      LookupKeyFields = 'kod_klienta'
+      LookupResultField = 'fio'
+      KeyFields = 'kod_klienta'
+      Size = 50
+      Lookup = True
+    end
+    object zakaz_autosposob_oplati: TStringField
+      FieldKind = fkLookup
+      FieldName = 'sposob_oplati'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'sposob_oplati'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
+    end
   end
   object zakaz_zapchasti: TADOTable
     Active = True

@@ -109,6 +109,10 @@ type
     zakaz_zapchastikod_klienta: TIntegerField;
     zakaz_zapchastifio: TStringField;
     zakaz_zapchastisposob_oplati: TStringField;
+    zakaz_autocena: TIntegerField;
+    zakaz_autokod_klienta: TIntegerField;
+    zakaz_autofio: TStringField;
+    zakaz_autosposob_oplati: TStringField;
     procedure АвтомобильGOD_VIPYSKASetText(Sender: TField; const Text: string);
     procedure АвтомобильOBYM_DVIGATELASetText(Sender: TField;
       const Text: string);
