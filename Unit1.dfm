@@ -70,6 +70,7 @@ object DM: TDM
     Top = 80
     object autokod_auto: TIntegerField
       FieldName = 'kod_auto'
+      ReadOnly = True
     end
     object autokod_postavki: TIntegerField
       FieldName = 'kod_postavki'
@@ -121,6 +122,7 @@ object DM: TDM
     Top = 80
     object postavchikkod_postavchika: TIntegerField
       FieldName = 'kod_postavchika'
+      ReadOnly = True
     end
     object postavchikima_postavchika: TWideStringField
       FieldName = 'ima_postavchika'
@@ -144,6 +146,7 @@ object DM: TDM
     Top = 80
     object postavkakod_postavki: TIntegerField
       FieldName = 'kod_postavki'
+      ReadOnly = True
     end
     object postavkakod_postavchika: TIntegerField
       FieldName = 'kod_postavchika'
@@ -183,6 +186,7 @@ object DM: TDM
     Top = 80
     object klientkod_klienta: TIntegerField
       FieldName = 'kod_klienta'
+      ReadOnly = True
     end
     object klientfamilya: TWideStringField
       FieldName = 'familya'
@@ -228,6 +232,7 @@ object DM: TDM
     Top = 80
     object zakazikod_zakaza: TIntegerField
       FieldName = 'kod_zakaza'
+      ReadOnly = True
     end
     object zakazikod_klienta: TIntegerField
       FieldName = 'kod_klienta'
@@ -506,6 +511,7 @@ object DM: TDM
     Top = 80
     object tuningkod_tuninga: TIntegerField
       FieldName = 'kod_tuninga'
+      ReadOnly = True
     end
     object tuningyslygi: TWideStringField
       FieldName = 'yslygi'
@@ -524,6 +530,7 @@ object DM: TDM
     Top = 80
     object zapchastikod_zapchasti: TIntegerField
       FieldName = 'kod_zapchasti'
+      ReadOnly = True
     end
     object zapchastikod_postavki: TIntegerField
       FieldName = 'kod_postavki'
