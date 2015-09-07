@@ -14,6 +14,7 @@ object Form8: TForm8
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnClose = FormClose
   OnShow = FormShow
   PixelsPerInch = 120
   TextHeight = 16
