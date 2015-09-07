@@ -177,6 +177,7 @@ object DM: TDM
     Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
+    OnCalcFields = klientCalcFields
     TableName = 'klient'
     Left = 296
     Top = 80
@@ -209,6 +210,12 @@ object DM: TDM
     end
     object klienttelefon: TIntegerField
       FieldName = 'telefon'
+    end
+    object klientfio: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'fio'
+      Size = 50
+      Calculated = True
     end
   end
   object zakazi: TADOTable
@@ -378,6 +385,43 @@ object DM: TDM
       KeyFields = 'kod_zakaza'
       Lookup = True
     end
+    object zakaz_tuningastoimosti: TIntegerField
+      FieldKind = fkLookup
+      FieldName = 'stoimosti'
+      LookupDataSet = tuning
+      LookupKeyFields = 'kod_tuninga'
+      LookupResultField = 'stoimosti'
+      KeyFields = 'kod_tuninga'
+      Lookup = True
+    end
+    object zakaz_tuningakod_klienta: TIntegerField
+      FieldKind = fkLookup
+      FieldName = 'kod_klienta'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'kod_klienta'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
+    end
+    object zakaz_tuningafio: TStringField
+      FieldKind = fkLookup
+      FieldName = 'fio'
+      LookupDataSet = klient
+      LookupKeyFields = 'kod_klienta'
+      LookupResultField = 'fio'
+      KeyFields = 'kod_klienta'
+      Size = 50
+      Lookup = True
+    end
+    object zakaz_tuningasposob_oplati: TStringField
+      FieldKind = fkLookup
+      FieldName = 'sposob_oplati'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'sposob_oplati'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
+    end
   end
   object tuning: TADOTable
     Active = True
@@ -428,6 +472,48 @@ object DM: TDM
       LookupResultField = 'ima_postavchika'
       KeyFields = 'kod_postavki'
       Lookup = True
+    end
+  end
+  object DataSource11: TDataSource
+    DataSet = sklad
+    Left = 216
+    Top = 16
+  end
+  object sklad: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'sklad'
+    Left = 136
+    Top = 16
+    object skladkod: TAutoIncField
+      FieldName = 'kod'
+      ReadOnly = True
+    end
+    object skladtip_produkta: TWideStringField
+      FieldName = 'tip_produkta'
+      Size = 255
+    end
+    object skladkod_produkta: TIntegerField
+      FieldName = 'kod_produkta'
+    end
+    object skladnaimenovanie: TWideStringField
+      FieldName = 'naimenovanie'
+      Size = 255
+    end
+    object skladpostavchik: TWideStringField
+      FieldName = 'postavchik'
+      Size = 255
+    end
+    object skladdata_postavki: TWideStringField
+      FieldName = 'data_postavki'
+      Size = 255
+    end
+    object skladcena: TIntegerField
+      FieldName = 'cena'
+    end
+    object skladkolichestvo: TIntegerField
+      FieldName = 'kolichestvo'
     end
   end
 end

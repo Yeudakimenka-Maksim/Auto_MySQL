@@ -40,7 +40,7 @@ object Form2: TForm2
     Top = 0
     Width = 946
     Height = 540
-    ActivePage = TabSheet2
+    ActivePage = TabSheet8
     Align = alClient
     TabOrder = 1
     OnChange = PageControl1Change
@@ -600,7 +600,6 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'kod_zapchasti'
             Title.Caption = #1050#1086#1076' '#1079#1072#1087#1095#1072#1089#1090#1080
-            Width = -1
             Visible = False
           end
           item
@@ -646,7 +645,6 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'kod_tuninga'
             Title.Caption = #1050#1086#1076' '#1058#1102#1085#1080#1085#1075#1072
-            Width = -1
             Visible = False
           end
           item
@@ -659,6 +657,29 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'data'
             Title.Caption = #1044#1072#1090#1072' '#1079#1072#1082#1072#1079#1072
+            Width = 132
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'stoimosti'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'kod_klienta'
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'fio'
+            Width = 341
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'sposob_oplati'
+            Width = 111
             Visible = True
           end>
       end
@@ -733,7 +754,6 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'kod_postavki'
             Title.Caption = #1050#1086#1076' '#1055#1086#1089#1090#1072#1074#1082#1080
-            Width = -1
             Visible = False
           end
           item
