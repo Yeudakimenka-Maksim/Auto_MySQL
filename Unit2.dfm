@@ -551,6 +551,7 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'automarkamodel'
             Title.Caption = #1040#1074#1090#1086
+            Width = 297
             Visible = True
           end
           item
@@ -567,6 +568,29 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'data'
             Title.Caption = #1044#1072#1090#1072' '#1079#1072#1082#1072#1079#1072
+            Width = 113
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cena'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'kod_klienta'
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'fio'
+            Width = 207
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'sposob_oplati'
+            Width = 89
             Visible = True
           end>
       end
@@ -613,6 +637,28 @@ object Form2: TForm2
             FieldName = 'data'
             Title.Caption = #1044#1072#1090#1072' '#1079#1072#1082#1072#1079#1072
             Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cena'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'kod_klienta'
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'fio'
+            Width = 310
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'sposob_oplati'
+            Width = 115
+            Visible = True
           end>
       end
     end
@@ -657,6 +703,29 @@ object Form2: TForm2
             Expanded = False
             FieldName = 'data'
             Title.Caption = #1044#1072#1090#1072' '#1079#1072#1082#1072#1079#1072
+            Width = 132
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'stoimosti'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'kod_klienta'
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'fio'
+            Width = 341
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'sposob_oplati'
+            Width = 111
             Visible = True
           end>
       end

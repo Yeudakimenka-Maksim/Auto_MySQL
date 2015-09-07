@@ -100,6 +100,19 @@ type
     skladdata_postavki: TWideStringField;
     skladcena: TIntegerField;
     skladkolichestvo: TIntegerField;
+    zakaz_tuningastoimosti: TIntegerField;
+    zakaz_tuningakod_klienta: TIntegerField;
+    klientfio: TStringField;
+    zakaz_tuningafio: TStringField;
+    zakaz_tuningasposob_oplati: TStringField;
+    zakaz_zapchasticena: TIntegerField;
+    zakaz_zapchastikod_klienta: TIntegerField;
+    zakaz_zapchastifio: TStringField;
+    zakaz_zapchastisposob_oplati: TStringField;
+    zakaz_autocena: TIntegerField;
+    zakaz_autokod_klienta: TIntegerField;
+    zakaz_autofio: TStringField;
+    zakaz_autosposob_oplati: TStringField;
     procedure АвтомобильGOD_VIPYSKASetText(Sender: TField; const Text: string);
     procedure АвтомобильOBYM_DVIGATELASetText(Sender: TField;
       const Text: string);
@@ -109,6 +122,7 @@ type
       DisplayText: Boolean);
     procedure zakaziCalcFields(DataSet: TDataSet);
     procedure zakaz_autoCalcFields(DataSet: TDataSet);
+    procedure klientCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -123,6 +137,12 @@ implementation
 { %CLASSGROUP 'System.Classes.TPersistent' }
 
 {$R *.dfm}
+
+procedure TDM.klientCalcFields(DataSet: TDataSet);
+begin
+  DM.klientfio.Value := DM.klientfamilya.Value + ' ' + DM.klientima.Value + ' '
+    + DM.klientotchestvo.Value;
+end;
 
 procedure TDM.zakaziCalcFields(DataSet: TDataSet);
 begin

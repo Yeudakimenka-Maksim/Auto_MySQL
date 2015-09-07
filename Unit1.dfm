@@ -177,6 +177,7 @@ object DM: TDM
     Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
+    OnCalcFields = klientCalcFields
     TableName = 'klient'
     Left = 296
     Top = 80
@@ -209,6 +210,12 @@ object DM: TDM
     end
     object klienttelefon: TIntegerField
       FieldName = 'telefon'
+    end
+    object klientfio: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'fio'
+      Size = 50
+      Calculated = True
     end
   end
   object zakazi: TADOTable
@@ -314,6 +321,43 @@ object DM: TDM
       KeyFields = 'kod_zakaza'
       Lookup = True
     end
+    object zakaz_autocena: TIntegerField
+      FieldKind = fkLookup
+      FieldName = 'cena'
+      LookupDataSet = auto
+      LookupKeyFields = 'kod_auto'
+      LookupResultField = 'cena'
+      KeyFields = 'kod_auto'
+      Lookup = True
+    end
+    object zakaz_autokod_klienta: TIntegerField
+      FieldKind = fkLookup
+      FieldName = 'kod_klienta'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'kod_klienta'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
+    end
+    object zakaz_autofio: TStringField
+      FieldKind = fkLookup
+      FieldName = 'fio'
+      LookupDataSet = klient
+      LookupKeyFields = 'kod_klienta'
+      LookupResultField = 'fio'
+      KeyFields = 'kod_klienta'
+      Size = 50
+      Lookup = True
+    end
+    object zakaz_autosposob_oplati: TStringField
+      FieldKind = fkLookup
+      FieldName = 'sposob_oplati'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'sposob_oplati'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
+    end
   end
   object zakaz_zapchasti: TADOTable
     Active = True
@@ -346,6 +390,43 @@ object DM: TDM
       KeyFields = 'kod_zakaza'
       Lookup = True
     end
+    object zakaz_zapchasticena: TIntegerField
+      FieldKind = fkLookup
+      FieldName = 'cena'
+      LookupDataSet = zapchasti
+      LookupKeyFields = 'kod_zapchasti'
+      LookupResultField = 'cena'
+      KeyFields = 'kod_zapchasti'
+      Lookup = True
+    end
+    object zakaz_zapchastikod_klienta: TIntegerField
+      FieldKind = fkLookup
+      FieldName = 'kod_klienta'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'kod_klienta'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
+    end
+    object zakaz_zapchastifio: TStringField
+      FieldKind = fkLookup
+      FieldName = 'fio'
+      LookupDataSet = klient
+      LookupKeyFields = 'kod_klienta'
+      LookupResultField = 'fio'
+      KeyFields = 'kod_klienta'
+      Size = 50
+      Lookup = True
+    end
+    object zakaz_zapchastisposob_oplati: TStringField
+      FieldKind = fkLookup
+      FieldName = 'sposob_oplati'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'sposob_oplati'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
+    end
   end
   object zakaz_tuninga: TADOTable
     Active = True
@@ -375,6 +456,43 @@ object DM: TDM
       LookupDataSet = zakazi
       LookupKeyFields = 'kod_zakaza'
       LookupResultField = 'data'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
+    end
+    object zakaz_tuningastoimosti: TIntegerField
+      FieldKind = fkLookup
+      FieldName = 'stoimosti'
+      LookupDataSet = tuning
+      LookupKeyFields = 'kod_tuninga'
+      LookupResultField = 'stoimosti'
+      KeyFields = 'kod_tuninga'
+      Lookup = True
+    end
+    object zakaz_tuningakod_klienta: TIntegerField
+      FieldKind = fkLookup
+      FieldName = 'kod_klienta'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'kod_klienta'
+      KeyFields = 'kod_zakaza'
+      Lookup = True
+    end
+    object zakaz_tuningafio: TStringField
+      FieldKind = fkLookup
+      FieldName = 'fio'
+      LookupDataSet = klient
+      LookupKeyFields = 'kod_klienta'
+      LookupResultField = 'fio'
+      KeyFields = 'kod_klienta'
+      Size = 50
+      Lookup = True
+    end
+    object zakaz_tuningasposob_oplati: TStringField
+      FieldKind = fkLookup
+      FieldName = 'sposob_oplati'
+      LookupDataSet = zakazi
+      LookupKeyFields = 'kod_zakaza'
+      LookupResultField = 'sposob_oplati'
       KeyFields = 'kod_zakaza'
       Lookup = True
     end
