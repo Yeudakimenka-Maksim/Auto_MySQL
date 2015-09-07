@@ -13,11 +13,8 @@ type
     Image1: TImage;
     MainMenu1: TMainMenu;
     N1: TMenuItem;
-    N2: TMenuItem;
     N3: TMenuItem;
     N4: TMenuItem;
-    N5: TMenuItem;
-    N7: TMenuItem;
     N8: TMenuItem;
     N9: TMenuItem;
     N10: TMenuItem;
@@ -43,6 +40,7 @@ type
     N28: TMenuItem;
     N29: TMenuItem;
     N30: TMenuItem;
+    N2: TMenuItem;
     procedure N11Click(Sender: TObject);
     procedure N13Click(Sender: TObject);
     procedure N8Click(Sender: TObject);
@@ -68,6 +66,7 @@ type
     procedure N28Click(Sender: TObject);
     procedure N29Click(Sender: TObject);
     procedure N30Click(Sender: TObject);
+    procedure N2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -243,6 +242,13 @@ begin
   Form6 := TForm6.Create(Self);
   Form6.RvProject10.Execute;
   Form6.Free;
+end;
+
+procedure TForm3.N2Click(Sender: TObject);
+begin
+  Form2.PageControl1.ActivePageIndex := 10;
+  Form2.Show;
+  Form3.Hide;
 end;
 
 procedure TForm3.N30Click(Sender: TObject);
