@@ -4,7 +4,7 @@ use auto;
 
 create table klient
 (
-  kod_klienta int,
+  kod_klienta int auto_increment,
   familya varchar(255),
   ima varchar(255),
   otchestvo varchar(255),
@@ -17,7 +17,7 @@ primary key (kod_klienta)
 
 create table postavchik
 (
-  kod_postavchika int,
+  kod_postavchika int auto_increment,
   ima_postavchika varchar(255),
   strana varchar(255),
   gorod varchar(255),
@@ -26,7 +26,7 @@ primary key (kod_postavchika)
 
 create table postavka
 (
-  kod_postavki int,
+  kod_postavki int auto_increment,
   kod_postavchika int,
   postavlenii_prodykt varchar(255),
   kolichestvo int,
@@ -38,7 +38,7 @@ alter table postavka add constraint fk_postavka_1 foreign key (kod_postavchika) 
 
 create table auto
 (
-  kod_auto int,
+  kod_auto int auto_increment,
   kod_postavki int,
   marka varchar(255),
   model varchar(255),
@@ -54,7 +54,7 @@ alter table auto add constraint fk_auto_1 foreign key (kod_postavki) references 
 
 create table tuning
 (
-  kod_tuninga int,
+  kod_tuninga int auto_increment,
   yslygi varchar(255),
   stoimosti int,
 primary key (kod_tuninga)
@@ -62,7 +62,7 @@ primary key (kod_tuninga)
 
 create table zakazi
 (
-  kod_zakaza int,
+  kod_zakaza int auto_increment,
   kod_klienta int,
   data varchar(255),
   sposob_oplati varchar(255),
@@ -90,7 +90,7 @@ alter table zakaz_tuninga add constraint fk_zakaz_tuninga_2 foreign key (kod_tun
 
 create table zapchasti
 (
-  kod_zapchasti int,
+  kod_zapchasti int auto_increment,
   kod_postavki int,
   naimenovanie_zapchasti varchar(255),
   cena int,
@@ -110,7 +110,7 @@ alter table zakaz_zapchasti add constraint fk_zakaz_zapchasti_2 foreign key (kod
 
 create table sklad
 (
-  kod int not null auto_increment,
+  kod int auto_increment,
   tip_produkta varchar(255),
   kod_produkta int not null,
   naimenovanie varchar(255),
