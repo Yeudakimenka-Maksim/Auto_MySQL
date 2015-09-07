@@ -34,7 +34,7 @@ create table postavka
   stoimosti int,
 primary key (kod_postavki)
 );
-alter table postavka add constraint fk_postavka_1 foreign key (kod_postavchika) references postavchik (kod_postavchika);
+alter table postavka add constraint fk_postavka_1 foreign key (kod_postavchika) references postavchik (kod_postavchika) on delete cascade on update cascade;
 
 create table auto
 (
@@ -50,7 +50,7 @@ create table auto
   kolvo int,
 primary key (kod_auto)
 );
-alter table auto add constraint fk_auto_1 foreign key (kod_postavki) references postavka (kod_postavki);
+alter table auto add constraint fk_auto_1 foreign key (kod_postavki) references postavka (kod_postavki) on delete cascade on update cascade;
 
 create table tuning
 (
@@ -68,7 +68,7 @@ create table zakazi
   sposob_oplati varchar(255),
 primary key (kod_zakaza)
 );
-alter table zakazi add constraint fk_zakazi_1 foreign key (kod_klienta) references klient (kod_klienta);
+alter table zakazi add constraint fk_zakazi_1 foreign key (kod_klienta) references klient (kod_klienta) on delete cascade on update cascade;
 
 create table zakaz_auto
 (
@@ -76,8 +76,8 @@ create table zakaz_auto
   kod_auto int,
 primary key (kod_zakaza, kod_auto)
 );
-alter table zakaz_auto add constraint fk_zakaz_auto_1 foreign key (kod_auto) references auto (kod_auto);
-alter table zakaz_auto add constraint fk_zakaz_auto_2 foreign key (kod_zakaza) references zakazi (kod_zakaza);
+alter table zakaz_auto add constraint fk_zakaz_auto_1 foreign key (kod_auto) references auto (kod_auto) on delete cascade on update cascade;
+alter table zakaz_auto add constraint fk_zakaz_auto_2 foreign key (kod_zakaza) references zakazi (kod_zakaza) on delete cascade on update cascade;
 
 create table zakaz_tuninga
 (
@@ -85,8 +85,8 @@ create table zakaz_tuninga
   kod_tuninga int,
 primary key (kod_tuninga, kod_zakaza)
 );
-alter table zakaz_tuninga add constraint fk_zakaz_tuninga_1 foreign key (kod_zakaza) references zakazi (kod_zakaza);
-alter table zakaz_tuninga add constraint fk_zakaz_tuninga_2 foreign key (kod_tuninga) references tuning (kod_tuninga);
+alter table zakaz_tuninga add constraint fk_zakaz_tuninga_1 foreign key (kod_zakaza) references zakazi (kod_zakaza) on delete cascade on update cascade;
+alter table zakaz_tuninga add constraint fk_zakaz_tuninga_2 foreign key (kod_tuninga) references tuning (kod_tuninga) on delete cascade on update cascade;
 
 create table zapchasti
 (
@@ -97,7 +97,7 @@ create table zapchasti
   kolichestvo_na_sklade int,
 primary key (kod_zapchasti)
 );
-alter table zapchasti add constraint fk_zapchasti_1 foreign key (kod_postavki) references postavka (kod_postavki);
+alter table zapchasti add constraint fk_zapchasti_1 foreign key (kod_postavki) references postavka (kod_postavki) on delete cascade on update cascade;
 
 create table zakaz_zapchasti
 (
@@ -105,8 +105,8 @@ create table zakaz_zapchasti
   kod_zapchasti int,
 primary key (kod_zakaza, kod_zapchasti)
 );
-alter table zakaz_zapchasti add constraint fk_zakaz_zapchasti_1 foreign key (kod_zapchasti) references zapchasti (kod_zapchasti);
-alter table zakaz_zapchasti add constraint fk_zakaz_zapchasti_2 foreign key (kod_zakaza) references zakazi (kod_zakaza);
+alter table zakaz_zapchasti add constraint fk_zakaz_zapchasti_1 foreign key (kod_zapchasti) references zapchasti (kod_zapchasti) on delete cascade on update cascade;
+alter table zakaz_zapchasti add constraint fk_zakaz_zapchasti_2 foreign key (kod_zakaza) references zakazi (kod_zakaza) on delete cascade on update cascade;
 
 create table sklad
 (
