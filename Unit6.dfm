@@ -91,4 +91,15 @@ object Form6: TForm6
     Left = 371
     Top = 235
   end
+  object RvDataSetConnection5: TRvDataSetConnection
+    RuntimeVisibility = rtDeveloper
+    DataSet = DM.sklad
+    Left = 224
+    Top = 232
+  end
+  object RvProject5: TRvProject
+    ProjectFile = 'C:\Users\'#1052#1072#1082#1089#1080#1084'\Desktop\'#1055#1088#1086#1075#1088#1072#1084#1084#1072'\auto\report\sklad.rav'
+    Left = 32
+    Top = 240
+  end
 end

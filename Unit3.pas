@@ -42,6 +42,7 @@ type
     N27: TMenuItem;
     N28: TMenuItem;
     N29: TMenuItem;
+    N30: TMenuItem;
     procedure N11Click(Sender: TObject);
     procedure N13Click(Sender: TObject);
     procedure N8Click(Sender: TObject);
@@ -66,6 +67,7 @@ type
     procedure N27Click(Sender: TObject);
     procedure N28Click(Sender: TObject);
     procedure N29Click(Sender: TObject);
+    procedure N30Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -240,6 +242,13 @@ procedure TForm3.N29Click(Sender: TObject);
 begin
   Form6 := TForm6.Create(Self);
   Form6.RvProject10.Execute;
+  Form6.Free;
+end;
+
+procedure TForm3.N30Click(Sender: TObject);
+begin
+  Form6 := TForm6.Create(Self);
+  Form6.RvProject5.Execute;
   Form6.Free;
 end;
 

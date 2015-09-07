@@ -24,6 +24,8 @@ type
     RvDataSetConnection9: TRvDataSetConnection;
     RvDataSetConnection10: TRvDataSetConnection;
     RvProject1: TRvProject;
+    RvDataSetConnection5: TRvDataSetConnection;
+    RvProject5: TRvProject;
   private
     { Private declarations }
   public
