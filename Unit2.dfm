@@ -148,55 +148,13 @@ object Form2: TForm2
         Caption = 'Panel2'
         ShowCaption = False
         TabOrder = 1
-        object Label1: TLabel
-          Left = 350
-          Top = 10
-          Width = 50
-          Height = 16
-          Caption = #1052#1086#1076#1077#1083#1100':'
-        end
-        object Label2: TLabel
-          Left = 545
-          Top = 10
-          Width = 47
-          Height = 16
-          Caption = #1057#1090#1088#1072#1085#1072':'
-        end
-        object Button1: TButton
-          Left = 4
+        object DBNavigator11: TDBNavigator
+          Left = 8
           Top = 7
-          Width = 64
+          Width = 250
           Height = 25
-          Caption = #1042' '#1082#1086#1085#1077#1094
+          DataSource = DM.DataSource1
           TabOrder = 0
-          OnClick = Button1Click
-        end
-        object Button2: TButton
-          Left = 74
-          Top = 7
-          Width = 136
-          Height = 25
-          Caption = #1055#1088#1077#1076#1099#1076#1091#1097#1072#1103' '#1079#1072#1087#1080#1089#1100
-          TabOrder = 1
-          OnClick = Button2Click
-        end
-        object ComboBox1: TComboBox
-          Left = 407
-          Top = 6
-          Width = 125
-          Height = 24
-          Style = csDropDownList
-          TabOrder = 2
-          OnChange = ComboBox1Change
-        end
-        object ComboBox2: TComboBox
-          Left = 600
-          Top = 6
-          Width = 125
-          Height = 24
-          Style = csDropDownList
-          TabOrder = 3
-          OnChange = ComboBox1Change
         end
       end
     end
@@ -276,49 +234,13 @@ object Form2: TForm2
         Caption = 'Panel3'
         ShowCaption = False
         TabOrder = 1
-        object Label3: TLabel
-          Left = 10
-          Top = 10
-          Width = 52
-          Height = 16
-          Caption = #1055#1088#1086#1076#1091#1082#1090':'
-        end
-        object Label4: TLabel
-          Left = 190
-          Top = 10
-          Width = 83
-          Height = 16
-          Caption = #1050#1086#1076' '#1087#1086#1089#1090#1072#1074#1082#1080':'
-        end
-        object Label5: TLabel
-          Left = 460
-          Top = 10
-          Width = 4
-          Height = 16
-        end
-        object Edit1: TEdit
-          Left = 70
-          Top = 6
-          Width = 100
-          Height = 24
-          TabOrder = 0
-          OnChange = Edit1Change
-        end
-        object Edit2: TEdit
-          Left = 279
-          Top = 6
-          Width = 100
-          Height = 24
-          TabOrder = 1
-        end
-        object Button3: TButton
-          Left = 385
-          Top = 6
-          Width = 60
+        object DBNavigator10: TDBNavigator
+          Left = 8
+          Top = 7
+          Width = 250
           Height = 25
-          Caption = #1053#1072#1081#1090#1080
-          TabOrder = 2
-          OnClick = Button3Click
+          DataSource = DM.DataSource3
+          TabOrder = 0
         end
       end
     end
@@ -329,7 +251,7 @@ object Form2: TForm2
         Left = 0
         Top = 0
         Width = 938
-        Height = 509
+        Height = 469
         Align = alClient
         DataSource = DM.DataSource2
         TabOrder = 0
@@ -369,6 +291,24 @@ object Form2: TForm2
             Visible = True
           end>
       end
+      object Panel4: TPanel
+        Left = 0
+        Top = 469
+        Width = 938
+        Height = 40
+        Align = alBottom
+        Caption = 'Panel2'
+        ShowCaption = False
+        TabOrder = 1
+        object DBNavigator9: TDBNavigator
+          Left = 8
+          Top = 7
+          Width = 250
+          Height = 25
+          DataSource = DM.DataSource2
+          TabOrder = 0
+        end
+      end
     end
     object TabSheet4: TTabSheet
       Caption = #1050#1083#1080#1077#1085#1090
@@ -377,7 +317,7 @@ object Form2: TForm2
         Left = 0
         Top = 0
         Width = 938
-        Height = 509
+        Height = 469
         Align = alClient
         DataSource = DM.DataSource4
         TabOrder = 0
@@ -445,6 +385,24 @@ object Form2: TForm2
             Visible = True
           end>
       end
+      object Panel5: TPanel
+        Left = 0
+        Top = 469
+        Width = 938
+        Height = 40
+        Align = alBottom
+        Caption = 'Panel2'
+        ShowCaption = False
+        TabOrder = 1
+        object DBNavigator8: TDBNavigator
+          Left = 8
+          Top = 7
+          Width = 250
+          Height = 25
+          DataSource = DM.DataSource4
+          TabOrder = 0
+        end
+      end
     end
     object TabSheet5: TTabSheet
       Caption = #1047#1072#1082#1072#1079#1099
@@ -453,7 +411,7 @@ object Form2: TForm2
         Left = 0
         Top = 0
         Width = 938
-        Height = 509
+        Height = 469
         Align = alClient
         DataSource = DM.DataSource5
         TabOrder = 0
@@ -515,6 +473,24 @@ object Form2: TForm2
             Visible = False
           end>
       end
+      object Panel6: TPanel
+        Left = 0
+        Top = 469
+        Width = 938
+        Height = 40
+        Align = alBottom
+        Caption = 'Panel2'
+        ShowCaption = False
+        TabOrder = 1
+        object DBNavigator7: TDBNavigator
+          Left = 8
+          Top = 7
+          Width = 250
+          Height = 25
+          DataSource = DM.DataSource5
+          TabOrder = 0
+        end
+      end
     end
     object TabSheet6: TTabSheet
       Caption = #1047#1072#1082#1072#1079' '#1072#1074#1090#1086
@@ -523,7 +499,7 @@ object Form2: TForm2
         Left = 0
         Top = 0
         Width = 938
-        Height = 509
+        Height = 469
         Align = alClient
         DataSource = DM.DataSource6
         TabOrder = 0
@@ -594,6 +570,24 @@ object Form2: TForm2
             Visible = True
           end>
       end
+      object Panel7: TPanel
+        Left = 0
+        Top = 469
+        Width = 938
+        Height = 40
+        Align = alBottom
+        Caption = 'Panel2'
+        ShowCaption = False
+        TabOrder = 1
+        object DBNavigator6: TDBNavigator
+          Left = 8
+          Top = 7
+          Width = 250
+          Height = 25
+          DataSource = DM.DataSource6
+          TabOrder = 0
+        end
+      end
     end
     object TabSheet7: TTabSheet
       Caption = #1047#1072#1082#1072#1079' '#1079#1072#1087#1095#1072#1089#1090#1080
@@ -602,7 +596,7 @@ object Form2: TForm2
         Left = 0
         Top = 0
         Width = 938
-        Height = 509
+        Height = 469
         Align = alClient
         DataSource = DM.DataSource7
         TabOrder = 0
@@ -661,6 +655,24 @@ object Form2: TForm2
             Visible = True
           end>
       end
+      object Panel8: TPanel
+        Left = 0
+        Top = 469
+        Width = 938
+        Height = 40
+        Align = alBottom
+        Caption = 'Panel2'
+        ShowCaption = False
+        TabOrder = 1
+        object DBNavigator5: TDBNavigator
+          Left = 8
+          Top = 7
+          Width = 250
+          Height = 25
+          DataSource = DM.DataSource7
+          TabOrder = 0
+        end
+      end
     end
     object TabSheet8: TTabSheet
       Caption = #1047#1072#1082#1072#1079' '#1090#1102#1085#1080#1085#1075#1072
@@ -669,7 +681,7 @@ object Form2: TForm2
         Left = 0
         Top = 0
         Width = 938
-        Height = 509
+        Height = 469
         Align = alClient
         DataSource = DM.DataSource8
         TabOrder = 0
@@ -729,6 +741,24 @@ object Form2: TForm2
             Visible = True
           end>
       end
+      object Panel9: TPanel
+        Left = 0
+        Top = 469
+        Width = 938
+        Height = 40
+        Align = alBottom
+        Caption = 'Panel2'
+        ShowCaption = False
+        TabOrder = 1
+        object DBNavigator4: TDBNavigator
+          Left = 8
+          Top = 7
+          Width = 250
+          Height = 25
+          DataSource = DM.DataSource8
+          TabOrder = 0
+        end
+      end
     end
     object TabSheet9: TTabSheet
       Caption = #1058#1102#1085#1080#1085#1075
@@ -737,7 +767,7 @@ object Form2: TForm2
         Left = 0
         Top = 0
         Width = 938
-        Height = 509
+        Height = 469
         Align = alClient
         DataSource = DM.DataSource9
         TabOrder = 0
@@ -770,6 +800,24 @@ object Form2: TForm2
             Visible = True
           end>
       end
+      object Panel10: TPanel
+        Left = 0
+        Top = 469
+        Width = 938
+        Height = 40
+        Align = alBottom
+        Caption = 'Panel2'
+        ShowCaption = False
+        TabOrder = 1
+        object DBNavigator3: TDBNavigator
+          Left = 8
+          Top = 7
+          Width = 250
+          Height = 25
+          DataSource = DM.DataSource9
+          TabOrder = 0
+        end
+      end
     end
     object TabSheet10: TTabSheet
       Caption = #1047#1072#1087#1095#1072#1089#1090#1080
@@ -778,7 +826,7 @@ object Form2: TForm2
         Left = 0
         Top = 0
         Width = 938
-        Height = 509
+        Height = 469
         Align = alClient
         DataSource = DM.DataSource10
         TabOrder = 0
@@ -830,6 +878,24 @@ object Form2: TForm2
             Visible = True
           end>
       end
+      object Panel11: TPanel
+        Left = 0
+        Top = 469
+        Width = 938
+        Height = 40
+        Align = alBottom
+        Caption = 'Panel2'
+        ShowCaption = False
+        TabOrder = 1
+        object DBNavigator2: TDBNavigator
+          Left = 8
+          Top = 7
+          Width = 250
+          Height = 25
+          DataSource = DM.DataSource10
+          TabOrder = 0
+        end
+      end
     end
     object TabSheet11: TTabSheet
       Caption = #1057#1082#1083#1072#1076
@@ -838,7 +904,7 @@ object Form2: TForm2
         Left = 0
         Top = 0
         Width = 938
-        Height = 509
+        Height = 469
         Align = alClient
         DataSource = DM.DataSource11
         ReadOnly = True
@@ -863,7 +929,7 @@ object Form2: TForm2
           item
             Expanded = False
             FieldName = 'kod_produkta'
-            Visible = True
+            Visible = False
           end
           item
             Expanded = False
@@ -893,6 +959,24 @@ object Form2: TForm2
             FieldName = 'kolichestvo'
             Visible = True
           end>
+      end
+      object Panel12: TPanel
+        Left = 0
+        Top = 469
+        Width = 938
+        Height = 40
+        Align = alBottom
+        Caption = 'Panel2'
+        ShowCaption = False
+        TabOrder = 1
+        object DBNavigator1: TDBNavigator
+          Left = 8
+          Top = 7
+          Width = 250
+          Height = 25
+          DataSource = DM.DataSource11
+          TabOrder = 0
+        end
       end
     end
   end
