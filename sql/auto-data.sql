@@ -103,3 +103,10 @@ INSERT INTO `zakaz_zapchasti` VALUES(1, 2);
 INSERT INTO `zakaz_zapchasti` VALUES(1, 3);
 INSERT INTO `zakaz_zapchasti` VALUES(1, 4);
 INSERT INTO `zakaz_zapchasti` VALUES(1, 5);
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` VALUES(null, 'Руководитель', '654321');
+INSERT INTO `user` VALUES(null, 'Пользователь', '123456');
