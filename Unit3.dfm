@@ -14,6 +14,7 @@ object Form3: TForm3
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  OnClose = FormClose
   PixelsPerInch = 120
   TextHeight = 16
   object Image1: TImage

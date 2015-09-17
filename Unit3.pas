@@ -67,6 +67,7 @@ type
     procedure N29Click(Sender: TObject);
     procedure N30Click(Sender: TObject);
     procedure N2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -80,7 +81,12 @@ implementation
 
 {$R *.dfm}
 
-uses Unit2, Unit6, Unit7, Unit8;
+uses Unit1, Unit2, Unit6, Unit7, Unit8;
+
+procedure TForm3.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Application.Terminate;
+end;
 
 procedure TForm3.N10Click(Sender: TObject);
 begin
@@ -152,6 +158,12 @@ end;
 
 procedure TForm3.N20Click(Sender: TObject);
 begin
+  if DM.CurrentUser.Name <> 'Руководитель' then
+  begin
+    ShowMessage('Просматривать отчеты может только руководитель');
+    exit;
+  end;
+
   Form6 := TForm6.Create(Self);
   Form6.RvProject1.Execute;
   Form6.Free;
@@ -183,6 +195,12 @@ end;
 
 procedure TForm3.N21Click(Sender: TObject);
 begin
+  if DM.CurrentUser.Name <> 'Руководитель' then
+  begin
+    ShowMessage('Просматривать отчеты может только руководитель');
+    exit;
+  end;
+
   Form6 := TForm6.Create(Self);
   Form6.RvProject2.Execute;
   Form6.Free;
@@ -190,6 +208,12 @@ end;
 
 procedure TForm3.N22Click(Sender: TObject);
 begin
+  if DM.CurrentUser.Name <> 'Руководитель' then
+  begin
+    ShowMessage('Просматривать отчеты может только руководитель');
+    exit;
+  end;
+
   Form6 := TForm6.Create(Self);
   Form6.RvProject3.Execute;
   Form6.Free;
@@ -197,6 +221,12 @@ end;
 
 procedure TForm3.N23Click(Sender: TObject);
 begin
+  if DM.CurrentUser.Name <> 'Руководитель' then
+  begin
+    ShowMessage('Просматривать отчеты может только руководитель');
+    exit;
+  end;
+
   Form6 := TForm6.Create(Self);
   Form6.RvProject4.Execute;
   Form6.Free;
@@ -204,6 +234,12 @@ end;
 
 procedure TForm3.N24Click(Sender: TObject);
 begin
+  if DM.CurrentUser.Name <> 'Руководитель' then
+  begin
+    ShowMessage('Просматривать отчеты может только руководитель');
+    exit;
+  end;
+
   Form6 := TForm6.Create(Self);
   Form6.RvProject10.Execute;
   Form6.Free;
@@ -211,6 +247,12 @@ end;
 
 procedure TForm3.N25Click(Sender: TObject);
 begin
+  if DM.CurrentUser.Name <> 'Руководитель' then
+  begin
+    ShowMessage('Просматривать отчеты может только руководитель');
+    exit;
+  end;
+
   Form6 := TForm6.Create(Self);
   Form6.RvProject10.Execute;
   Form6.Free;
@@ -218,6 +260,12 @@ end;
 
 procedure TForm3.N26Click(Sender: TObject);
 begin
+  if DM.CurrentUser.Name <> 'Руководитель' then
+  begin
+    ShowMessage('Просматривать отчеты может только руководитель');
+    exit;
+  end;
+
   Form6 := TForm6.Create(Self);
   Form6.RvProject10.Execute;
   Form6.Free;
@@ -225,6 +273,12 @@ end;
 
 procedure TForm3.N27Click(Sender: TObject);
 begin
+  if DM.CurrentUser.Name <> 'Руководитель' then
+  begin
+    ShowMessage('Просматривать отчеты может только руководитель');
+    exit;
+  end;
+
   Form6 := TForm6.Create(Self);
   Form6.RvProject8.Execute;
   Form6.Free;
@@ -232,6 +286,12 @@ end;
 
 procedure TForm3.N28Click(Sender: TObject);
 begin
+  if DM.CurrentUser.Name <> 'Руководитель' then
+  begin
+    ShowMessage('Просматривать отчеты может только руководитель');
+    exit;
+  end;
+
   Form6 := TForm6.Create(Self);
   Form6.RvProject9.Execute;
   Form6.Free;
@@ -239,6 +299,12 @@ end;
 
 procedure TForm3.N29Click(Sender: TObject);
 begin
+  if DM.CurrentUser.Name <> 'Руководитель' then
+  begin
+    ShowMessage('Просматривать отчеты может только руководитель');
+    exit;
+  end;
+
   Form6 := TForm6.Create(Self);
   Form6.RvProject10.Execute;
   Form6.Free;
@@ -253,6 +319,12 @@ end;
 
 procedure TForm3.N30Click(Sender: TObject);
 begin
+  if DM.CurrentUser.Name <> 'Руководитель' then
+  begin
+    ShowMessage('Просматривать отчеты может только руководитель');
+    exit;
+  end;
+
   Form6 := TForm6.Create(Self);
   Form6.RvProject5.Execute;
   Form6.Free;

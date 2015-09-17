@@ -113,20 +113,21 @@ type
     zakaz_autokod_klienta: TIntegerField;
     zakaz_autofio: TStringField;
     zakaz_autosposob_oplati: TStringField;
-    procedure АвтомобильGOD_VIPYSKASetText(Sender: TField; const Text: string);
-    procedure АвтомобильOBYM_DVIGATELASetText(Sender: TField;
-      const Text: string);
-    procedure ПоставкаKOLICHESTVOSetText(Sender: TField; const Text: string);
-    procedure ПоставкаSTOIMOSTISetText(Sender: TField; const Text: string);
-    procedure ЗаказыIntervalGetText(Sender: TField; var Text: string;
-      DisplayText: Boolean);
+    DataSource12: TDataSource;
+    user: TADOTable;
+    userkod_usera: TAutoIncField;
+    userlogin: TWideStringField;
+    userparol: TWideStringField;
     procedure zakaziCalcFields(DataSet: TDataSet);
     procedure zakaz_autoCalcFields(DataSet: TDataSet);
     procedure klientCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
   public
-    { Public declarations }
+    CurrentUser: record
+	  Name: string[255];
+      Password: string[255];
+    end;
   end;
 
 var
@@ -154,49 +155,6 @@ procedure TDM.zakaz_autoCalcFields(DataSet: TDataSet);
 begin
   DM.zakaz_autoautomarkamodel.Value := DM.zakaz_autoautomarka.Value + ' ' +
     DM.zakaz_autoautomodel.Value;
-end;
-
-procedure TDM.АвтомобильGOD_VIPYSKASetText(Sender: TField; const Text: string);
-begin
-  if StrToInt(Text) < 0 then
-    ShowMessage('Год выпуска не может быть отрицательным')
-  else if StrToInt(Text) > 2012 then
-    ShowMessage('Год выпуска не позже текущего года')
-  else
-    DM.autogod_vipyska.Value := StrToInt(Text);
-end;
-
-procedure TDM.АвтомобильOBYM_DVIGATELASetText(Sender: TField;
-  const Text: string);
-begin
-  if StrToInt(Text) < 0 then
-    ShowMessage('Объем двигателя не может быть отрицательным')
-  else if StrToInt(Text) > 12 then
-    ShowMessage('Слишком большой объем двигателя')
-  else
-    DM.autoobym_dvigatela.Value := StrToInt(Text);
-end;
-
-procedure TDM.ЗаказыIntervalGetText(Sender: TField; var Text: string;
-  DisplayText: Boolean);
-begin
-  Text := IntToStr(YearsBetween(Now(), StrToDate(DM.zakazidata.Value)));
-end;
-
-procedure TDM.ПоставкаKOLICHESTVOSetText(Sender: TField; const Text: string);
-begin
-  if StrToInt(Text) < 0 then
-    ShowMessage('Количество не может быть меньше нуля')
-  else
-    DM.postavkakolichestvo.Value := StrToInt(Text);
-end;
-
-procedure TDM.ПоставкаSTOIMOSTISetText(Sender: TField; const Text: string);
-begin
-  if StrToInt(Text) < 0 then
-    ShowMessage('Стоимость не может быть меньше нуля')
-  else
-    DM.postavkastoimosti.Value := StrToInt(Text);
 end;
 
 end.

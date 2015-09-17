@@ -67,7 +67,6 @@ begin
         end;
         DM.auto.Insert;
         DM.auto.Fields[1].AsInteger := StrToInt(ComboBox1.Text);
-        DM.auto.Fields[0].AsInteger := StrToInt(Edit1.Text);
         DM.auto.Fields[3].AsString := Edit8.Text;
         DM.auto.Fields[4].AsString := Edit9.Text;
         DM.auto.Fields[5].AsInteger := StrToInt(Edit2.Text);
@@ -91,7 +90,6 @@ begin
         end;
         DM.auto.Locate('KOD_AUTO', ComboBox4.Text, []);
         DM.auto.Edit;
-        DM.auto.Fields[0].AsInteger := StrToInt(ComboBox4.Text);
         DM.auto.Fields[1].AsInteger := StrToInt(ComboBox1.Text);
         DM.auto.Fields[3].AsString := Edit8.Text;
         DM.auto.Fields[4].AsString := Edit9.Text;
@@ -192,6 +190,7 @@ begin
           DM.auto.Next;
         end;
         ComboBox4.ItemIndex := ComboBox4.Items.IndexOf(IntToStr(i));
+        ComboBox1.Clear;
         DM.postavka.First;
         while not DM.postavka.Eof do
         begin

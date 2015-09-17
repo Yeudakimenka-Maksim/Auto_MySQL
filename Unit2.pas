@@ -72,6 +72,7 @@ type
     procedure DBGrid3TitleClick(Column: TColumn);
     procedure DBGrid10TitleClick(Column: TColumn);
     procedure N1Click(Sender: TObject);
+    procedure DBNavigator11BeforeAction(Sender: TObject; Button: TNavigateBtn);
   private
     { Private declarations }
   public
@@ -147,6 +148,16 @@ begin
     DM.zakaz_tuninga.IndexFieldNames := Column.FieldName;
 end;
 
+procedure TForm2.DBNavigator11BeforeAction(Sender: TObject;
+  Button: TNavigateBtn);
+begin
+  if (Button = nbDelete) and (DM.CurrentUser.Name <> 'Руководитель') then
+  begin
+    ShowMessage('Удалять записи может только руководитель');
+    Abort;
+  end;
+end;
+
 procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Form3.Show;
@@ -160,6 +171,13 @@ end;
 
 procedure TForm2.N1Click(Sender: TObject);
 begin
+  if ((Sender as TMenuItem).Tag = 2) and (DM.CurrentUser.Name <> 'Руководитель')
+  then
+  begin
+    ShowMessage('Удалять записи может только руководитель');
+    Abort;
+  end;
+
   Form4.mode := (Sender as TMenuItem).Tag;
   Form4.Show;
 end;
