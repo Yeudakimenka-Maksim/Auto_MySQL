@@ -121,6 +121,14 @@ create table sklad
 primary key (kod)
 );
 
+create table user
+(
+  kod_usera int auto_increment,
+  login varchar(255),
+  parol varchar(255),
+primary key (kod_usera)
+);
+
 -- insert into sklad (tip_produkta, kod_produkta, naimenovanie, cena, kolichestvo)
 -- select 'auto', kod_auto, CONCAT(marka, ' ', model), cena, kolvo
 -- from auto;
