@@ -192,6 +192,7 @@ begin
           DM.auto.Next;
         end;
         ComboBox4.ItemIndex := ComboBox4.Items.IndexOf(IntToStr(i));
+        ComboBox1.Clear;
         DM.postavka.First;
         while not DM.postavka.Eof do
         begin
