@@ -155,6 +155,7 @@ object Form2: TForm2
           Height = 25
           DataSource = DM.DataSource1
           TabOrder = 0
+          BeforeAction = DBNavigator11BeforeAction
         end
       end
     end
@@ -241,6 +242,7 @@ object Form2: TForm2
           Height = 25
           DataSource = DM.DataSource3
           TabOrder = 0
+          BeforeAction = DBNavigator11BeforeAction
         end
       end
     end
@@ -307,6 +309,7 @@ object Form2: TForm2
           Height = 25
           DataSource = DM.DataSource2
           TabOrder = 0
+          BeforeAction = DBNavigator11BeforeAction
         end
       end
     end
@@ -401,6 +404,7 @@ object Form2: TForm2
           Height = 25
           DataSource = DM.DataSource4
           TabOrder = 0
+          BeforeAction = DBNavigator11BeforeAction
         end
       end
     end
@@ -489,6 +493,7 @@ object Form2: TForm2
           Height = 25
           DataSource = DM.DataSource5
           TabOrder = 0
+          BeforeAction = DBNavigator11BeforeAction
         end
       end
     end
@@ -590,6 +595,7 @@ object Form2: TForm2
           Height = 25
           DataSource = DM.DataSource6
           TabOrder = 0
+          BeforeAction = DBNavigator11BeforeAction
         end
       end
     end
@@ -681,6 +687,7 @@ object Form2: TForm2
           Height = 25
           DataSource = DM.DataSource7
           TabOrder = 0
+          BeforeAction = DBNavigator11BeforeAction
         end
       end
     end
@@ -772,6 +779,7 @@ object Form2: TForm2
           Height = 25
           DataSource = DM.DataSource8
           TabOrder = 0
+          BeforeAction = DBNavigator11BeforeAction
         end
       end
     end
@@ -831,6 +839,7 @@ object Form2: TForm2
           Height = 25
           DataSource = DM.DataSource9
           TabOrder = 0
+          BeforeAction = DBNavigator11BeforeAction
         end
       end
     end
@@ -909,6 +918,7 @@ object Form2: TForm2
           Height = 25
           DataSource = DM.DataSource10
           TabOrder = 0
+          BeforeAction = DBNavigator11BeforeAction
         end
       end
     end
@@ -1000,6 +1010,7 @@ object Form2: TForm2
           Height = 25
           DataSource = DM.DataSource11
           TabOrder = 0
+          BeforeAction = DBNavigator11BeforeAction
         end
       end
     end
