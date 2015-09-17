@@ -479,4 +479,29 @@ object DM: TDM
       FieldName = 'kolichestvo'
     end
   end
+  object DataSource12: TDataSource
+    DataSet = user
+    Left = 376
+    Top = 16
+  end
+  object user: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'user'
+    Left = 296
+    Top = 16
+    object userkod_usera: TAutoIncField
+      FieldName = 'kod_usera'
+      ReadOnly = True
+    end
+    object userlogin: TWideStringField
+      FieldName = 'login'
+      Size = 255
+    end
+    object userparol: TWideStringField
+      FieldName = 'parol'
+      Size = 255
+    end
+  end
 end

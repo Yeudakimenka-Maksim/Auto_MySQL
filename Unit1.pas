@@ -100,12 +100,20 @@ type
     skladdata_postavki: TWideStringField;
     skladcena: TIntegerField;
     skladkolichestvo: TIntegerField;
+    DataSource12: TDataSource;
+    user: TADOTable;
+    userkod_usera: TAutoIncField;
+    userlogin: TWideStringField;
+    userparol: TWideStringField;
     procedure zakaziCalcFields(DataSet: TDataSet);
     procedure zakaz_autoCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
   public
-    { Public declarations }
+    CurrentUser: record
+	  Name: string[255];
+      Password: string[255];
+    end;
   end;
 
 var

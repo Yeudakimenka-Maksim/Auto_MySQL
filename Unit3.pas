@@ -66,6 +66,7 @@ type
     procedure N27Click(Sender: TObject);
     procedure N28Click(Sender: TObject);
     procedure N29Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -80,6 +81,11 @@ implementation
 {$R *.dfm}
 
 uses Unit2, Unit5, Unit6, Unit7, Unit8;
+
+procedure TForm3.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Application.Terminate;
+end;
 
 procedure TForm3.N10Click(Sender: TObject);
 begin
